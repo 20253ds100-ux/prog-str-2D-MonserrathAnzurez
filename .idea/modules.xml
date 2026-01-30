@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ADIVINANUMERO/ADIVINANUMERO.iml" filepath="$PROJECT_DIR$/ADIVINANUMERO/ADIVINANUMERO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MenuDeConversion/MenuDeConversion.iml" filepath="$PROJECT_DIR$/MenuDeConversion/MenuDeConversion.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/prog-str-2D-MonserrathAnzurez.iml" filepath="$PROJECT_DIR$/.idea/prog-str-2D-MonserrathAnzurez.iml" />
       <module fileurl="file://$PROJECT_DIR$/proyecto-01-hola-mundo/proyecto-01-hola-mundo.iml" filepath="$PROJECT_DIR$/proyecto-01-hola-mundo/proyecto-01-hola-mundo.iml" />
     </modules>
