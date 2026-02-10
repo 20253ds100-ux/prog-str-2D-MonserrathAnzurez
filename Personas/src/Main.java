@@ -10,13 +10,13 @@ public class Main {
             System.out.println("Menu");
             System.out.println("1)Para alta");
             System.out.println("2)buscar por ID");
-            System.out.println("3)Para Baja logica por id");
+            System.out.println("3) Para Baja logica por id");
             System.out.println("4)listar activas");
             System.out.println("5)nombre por id");
             System.out.println("0)Para salir");
             opc=sc.nextInt();
             if(opc==0){
-                System.out.println("Salir"); //Puse el if, porque si le daba 0 se ejecutaba tambien el default y salia "opcion ivalida"
+                System.out.println("Salir"); //Puse el if, porque si le daba 0 se ejecutaba tambien el default y salia "opcion invalida"
             }else{
                 switch (opc){
                     case 1:
