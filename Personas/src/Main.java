@@ -12,7 +12,7 @@ public class Main {
             System.out.println("2)buscar por ID");
             System.out.println("3) Para Baja logica por id");
             System.out.println("4)listar activas");
-            System.out.println("5)nombre por id");
+            System.out.println("5)Actualizar");
             System.out.println("0)Para salir");
             opc=sc.nextInt();
             if(opc==0){
