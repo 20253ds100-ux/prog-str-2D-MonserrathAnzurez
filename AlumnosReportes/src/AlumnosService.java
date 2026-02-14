@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class AlumnosService {
     public static void alta(Scanner sc, Alumno[] alumnos) {
         System.out.println("Ingresa ID:");
