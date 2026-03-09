@@ -24,4 +24,21 @@ public class PersonService {
         }
         return result;
     }
+
+    public void addPerson(String name, String email) throws IOException {
+        validatePerson(name, email);
+        String nameNoComa= name.replace(",", "");
+        String emailNoComa= email.replace(",", "");
+        repo.appendNewLine(nameNoComa+","+emailNoComa);
+    }
+
+    private void validatePerson(String name, String email) {
+        if (name==null || name.isBlank() || name.length() < 3) {
+            throw new IllegalArgumentException("El nombre no cumple con los estandares");
+        }
+        String em=(email==null) ? "" : email.trim();
+        if(em.isBlank() || !em.contains("@") || ! em.contains(".")){
+            throw new IllegalArgumentException("El correo es invalido");
+        }
+    }
 }
