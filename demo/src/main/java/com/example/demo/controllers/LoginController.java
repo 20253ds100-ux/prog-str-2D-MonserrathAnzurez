@@ -1,5 +1,4 @@
 package com.example.demo.controllers;
-
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -8,19 +7,14 @@ import javafx.stage.Stage;
 import javafx.scene.Parent;
 import java.io.IOException;
 public class LoginController {
-
     @FXML
     private TextField txtUsuario;
-
     @FXML
     private TextField txtCorreo;
-
     @FXML
     private PasswordField txtPassword;
-
     @FXML
     private Label lblError;
-
     @FXML
     private void handleLogin() throws IOException {
         String usuario = txtUsuario.getText();
@@ -35,11 +29,9 @@ public class LoginController {
         }if (password.length() < 6) {
             lblError.setText("Contraseña mínimo 6 caracteres");
             return;
-        }
-        FXMLLoader loader = new FXMLLoader(
+        }FXMLLoader loader = new FXMLLoader(
                 getClass().getResource("/views/dashboard.fxml")
-        );
-        Parent root = loader.load();
+        );Parent root = loader.load();
         DashboardController dashboardController = loader.getController();
         dashboardController.setUsuario(usuario);
         Stage stage = (Stage) txtUsuario.getScene().getWindow();
