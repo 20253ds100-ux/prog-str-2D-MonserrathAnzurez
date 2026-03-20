@@ -9,6 +9,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 public class AppController {
     @FXML
@@ -22,17 +23,47 @@ public class AppController {
     @FXML
     private TextField textEdad;
     @FXML
+    private TextField textBusqueda;
+    @FXML
     private final ObservableList<String> data = FXCollections.observableArrayList();
     private PersonService service= new PersonService();
+
+
+    private void filtrarLista(String textBusqueda) {
+        List<String> filtrada = new ArrayList<>();
+
+        for(String item : data){
+            String [] partesDelString = item.split("-");
+            System.out.println(partesDelString[1]);
+            if(partesDelString[1].contains(textBusqueda)){
+                filtrada.add(item);
+            }
+        }
+        data.setAll(filtrada);
+
+    }
+
     @FXML
     public void initialize(){ //se va a ejecutar el inicio, en cuanto se cargue el controller
         //Inicializar ListView
         loadFromFile();
+
+        textBusqueda.textProperty().addListener((observable, oldValue, newValue) -> {
+            if(!newValue.isEmpty()) {
+                filtrarLista(newValue);
+            }else{
+                loadFromFile();
+            }
+        });
+
         listView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             loadDataToForm(newValue);//String con valor del row 0 test-email@gmail.com
         });
         listView.setItems(data);
     }
+
+
+
     public void onAddPerson(){
         try {
             String name = textName.getText();
@@ -80,6 +111,11 @@ public class AppController {
             lblMsg.setText(ex.getMessage());
             lblMsg.setStyle("-fx-text-fill: red");
         }
+    }
+
+    @FXML
+    public void onReload(){
+        loadFromFile();
     }
 
     @FXML

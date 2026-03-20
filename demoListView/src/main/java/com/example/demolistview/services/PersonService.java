@@ -48,7 +48,6 @@ public class PersonService {
         List<String> lines = getAllCleanLines();
         lines.remove(index);
         repo.appendAllLines(lines);
-
     }
 
     private List<String> getAllCleanLines() throws IOException {

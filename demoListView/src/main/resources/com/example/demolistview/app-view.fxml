@@ -7,7 +7,13 @@
 
     <children>
         <Label text="Listado de personas" />
-      <GridPane prefHeight="77.0" prefWidth="600.0">
+      <HBox prefHeight="28.0" prefWidth="600.0">
+         <children>
+            <Label text="Buscador:" />
+            <TextField fx:id="textBusqueda" prefHeight="25.0" prefWidth="536.0" />
+         </children>
+      </HBox>
+      <GridPane prefHeight="162.0" prefWidth="600.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -29,9 +35,9 @@
          </children>
       </GridPane>
 
-        <HBox prefHeight="40.0" prefWidth="600.0">
+        <HBox prefHeight="33.0" prefWidth="600.0">
             <children>
-                <Button mnemonicParsing="false" text="Recargar" />
+                <Button mnemonicParsing="false" onAction="#onReload" text="Recargar" />
                 <Button mnemonicParsing="false" onAction="#onAddPerson" text="Agregar" />
             <Button mnemonicParsing="false" onAction="#onUpdate" text="Actualizar" />
             <Button mnemonicParsing="false" onAction="#onDelete" text="Eliminar" />
