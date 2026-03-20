@@ -34,6 +34,7 @@
                 <Button mnemonicParsing="false" text="Recargar" />
                 <Button mnemonicParsing="false" onAction="#onAddPerson" text="Agregar" />
             <Button mnemonicParsing="false" onAction="#onUpdate" text="Actualizar" />
+            <Button mnemonicParsing="false" onAction="#onDelete" text="Eliminar" />
             </children>
         </HBox>
         <ListView fx:id="listView" prefHeight="258.0" prefWidth="600.0" />

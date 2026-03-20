@@ -81,6 +81,24 @@ public class AppController {
             lblMsg.setStyle("-fx-text-fill: red");
         }
     }
+
+    @FXML
+    public void onDelete(){
+        int index = listView.getSelectionModel().getSelectedIndex();
+        try{
+            service.deletePerson(index);
+            loadFromFile();
+            lblMsg.setText("Eliminado con exito");
+            lblMsg.setStyle("-fx-text-fill: green");
+            textName.clear();
+            textEmail.clear();
+            textEdad.clear();
+        }catch (IOException e){
+            lblMsg.setText("Hubo un error con el archivo a eliminar");
+            lblMsg.setStyle("-fx-text-fill: red");
+        }
+    }
+
     private void loadFromFile(){
         try{
             List<String> items = service.loadDataforList();
