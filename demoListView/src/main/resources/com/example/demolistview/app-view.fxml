@@ -29,13 +29,14 @@
          </children>
       </GridPane>
 
-        <HBox prefHeight="100.0" prefWidth="200.0">
+        <HBox prefHeight="40.0" prefWidth="600.0">
             <children>
                 <Button mnemonicParsing="false" text="Recargar" />
                 <Button mnemonicParsing="false" onAction="#onAddPerson" text="Agregar" />
+            <Button mnemonicParsing="false" onAction="#onUpdate" text="Actualizar" />
             </children>
         </HBox>
-        <ListView fx:id="listView" prefHeight="200.0" prefWidth="200.0" />
+        <ListView fx:id="listView" prefHeight="258.0" prefWidth="600.0" />
         <Label fx:id="lblMsg" />
     </children>
 </VBox>
