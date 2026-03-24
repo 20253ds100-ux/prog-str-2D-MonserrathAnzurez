@@ -1,15 +1,10 @@
 package com.example.demolistview.services;
-
 import com.example.demolistview.repositories.PersonFileRepository;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 public class PersonService {
-
     private PersonFileRepository repo = new PersonFileRepository();
-
     public List<String> loadDataforList() throws IOException {
         List<String> lines = repo.readAllLines();//Recupera las lineas del archivo
         List<String> result = new ArrayList<>();//El listado de resultado con el formato deseado
@@ -26,14 +21,12 @@ public class PersonService {
         }
         return result;
     }
-
     public void addPerson(String name, String email, int edad) throws IOException {
         validatePerson(name, email, edad);
         String nameNoComa= name.replace(",", "");
         String emailNoComa= email.replace(",", "");
         repo.appendNewLine(nameNoComa+","+emailNoComa+ "," + edad);
     }
-
     private void validatePerson(String name, String email, int edad) {
         if (name==null || name.isBlank() || name.length() < 3) {
             throw new IllegalArgumentException("El nombre no cumple con los estandares");
